@@ -1,0 +1,30 @@
+paths:
+    "/users/sparePart":
+        post:
+            tags:
+            - sparePart
+            description: spare part details
+            produces:
+            - application/json
+            parameters:
+            - name: body
+              in: body
+              required: true
+              schema: 
+                type: object
+                description: request object 
+                properties:
+                    location:
+                        type: string
+                        example: mumbai
+                    year:
+                        type: number
+                        example: 2015
+                    model:
+                        type: string
+                        example: alto800
+            responses:
+                '200':
+                    description: data found
+                '404':
+                    description: data not found
